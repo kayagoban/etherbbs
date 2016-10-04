@@ -1,0 +1,6 @@
+*.swp
+contracts/binaries/
+build/
+release
+.python-version
+devchain*

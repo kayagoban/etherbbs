@@ -1,0 +1,28 @@
+
+try to create own deployment and testing scripts with:
+geth --dev --unlock primary --mine --exec 'loadScript("/tmp/test.js")' attach
+
+if using truffle...
+to avoid cyclical dep bug in truffle, use develop branch, instructions in:
+https://github.com/ConsenSys/truffle/pull/143
+
+There is a segfault in solc, this build command fixes:
+./webthree-helpers/scripts/ethbuild.sh --no-git --clean-build --project solidity -DETHASHCL=0 -DEVMJIT=0 --cores 10
+
+- Keep the community in control:
+    Voting contracts for 
+      forum manager election
+      new forum request
+      manager-vote group.  can delete system users and posts
+
+- How to remove users from a blocklist if the blocked user gets garbage collected.
+
+- Managers forum, only managers can post to it.  ?
+
+- Contract for deployment (shell)
+    Would allow upgrade of even the EtherBBS top-level contract
+    See http://ethereum.stackexchange.com/questions/2404/upgradeable-contracts
+    and https://solidity.readthedocs.io/en/latest/control-structures.html?highlight=extends#external-function-calls
+
+  
+- Use error callbacks before throw for better user experience
